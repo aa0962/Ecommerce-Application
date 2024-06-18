@@ -151,11 +151,26 @@ class APIfeatures {
   }
 
   sorting() {
-    // Sorting logic
+    if(this.queryString.sort){
+      const sortBy = this.queryString.sort.split(',').join(' ');
+      this.query = this.query.sort(sortBy);
+      console.log(sortBy);
+    } else {
+      this.query = this.query.sort('-createdAt');
+    }
+    return this; // Return 'this' for method chaining
   }
 
   pagination() {
-    // Pagination logic
+    const page= this.queryString.page * 1 || 1;
+    const limit=this.queryString.limit*1 || 9;
+
+    const skip=(page-1)* limit;
+
+    this.query=this.query.skip(skip).limit(limit);
+
+    return this;
+    
   }
 }
 
@@ -164,10 +179,12 @@ const productCtrl = {
     try {
       console.log("Request query:", req.query);
 
-      const features = new APIfeatures(Products.find(), req.query).filtering();
+      const features = new APIfeatures(Products.find(), req.query).filtering().sorting().pagination()
+    
       const products = await features.query;
 
-      console.log("Products retrieved:", products);
+      // console.log("Products retrieved:", products);
+      res.json({result: products.length})
 
       res.status(200).json({
         status: 'success',
