@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
+const cors = require('cors'); // Import the cors package
 
 const app = express();
 
+app.use(cors()); // Use the cors middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -31,7 +33,6 @@ app.use('/api', require('./routes/productRouter'));
 app.use('/api', require('./routes/upload'));
 
 //connect MongoDB
-
 const URI = process.env.MONGODB_URL;
 
 mongoose
