@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import ProductAPI from "./api/ProductAPI";
-import React from 'react';
+// import React from 'react';
 export const GlobalState=createContext();
 
 export  const DataProvider=({children})=>{
