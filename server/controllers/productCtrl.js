@@ -184,7 +184,7 @@ const productCtrl = {
       const products = await features.query;
 
       // console.log("Products retrieved:", products);
-      res.json({result: products.length})
+      // res.json({result: products.length})
 
       res.status(200).json({
         status: 'success',

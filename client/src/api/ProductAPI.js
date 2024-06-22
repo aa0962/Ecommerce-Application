@@ -6,8 +6,9 @@ const ProductAPI=()=>{
 
     const getProducts=async()=>{
         try{
-            const res=await axios.get('/api/products')
-        console.log(res.data.products)
+            const res=await axios.get('http://localhost:5000/api/products')
+            console.log(res.data.data.products)
+        // console.log(res.data.products)
         }
         catch(err){
             console.log(err)
