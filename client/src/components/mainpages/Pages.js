@@ -1,9 +1,9 @@
 import React from 'react';
-import Product from './products/Product';
 import Login from './login/Login';
 import Cart from './cart/Cart';
 import Register from './login/Register'
 import { Route,Routes } from 'react-router-dom';
+import Product from './products/Product';
 
 
 const Pages=()=>{

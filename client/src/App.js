@@ -6,6 +6,7 @@ import { DataProvider } from './GlobalState'
 
 const App=()=>{
   return(
+    
     <DataProvider>
     <Router>
     <div className='App'>
