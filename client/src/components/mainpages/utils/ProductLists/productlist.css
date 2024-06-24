@@ -68,12 +68,12 @@
 
 #btn_buy{
     background:#555 ;
-    margin-right: 40px;
+    margin-right: 60px;
 }
 
 #btn_view{
     background: #555;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
 @media (max-width: 900px) {

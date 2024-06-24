@@ -1,4 +1,4 @@
-import { createContext} from "react";
+import { createContext } from "react";
 import ProductAPI from "./api/ProductAPI";
 import { useState } from "react";
 export const GlobalState=createContext();
