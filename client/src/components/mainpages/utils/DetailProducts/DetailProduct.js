@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { GlobalState } from '../../../../GlobalState'
 
 const DetailProduct = () => {
@@ -24,6 +24,18 @@ const DetailProduct = () => {
   return (
     <div className='detail'>
         <img src={detailProduct.images.url} alt=''/>
+        <div className='box-detail'>
+          <div className='row'>
+            <h2>{detailProduct.title}</h2>
+            <h6>{detailProduct.product_id}</h6>
+          </div>
+          <span> ${detailProduct.price}</span>
+          <p>{detailProduct.description}</p>
+          <p>{detailProduct.content}</p>
+          <p>Sold:{detailProduct.sold}</p>
+          <Link to='/cart' className="cart">Buy Now</Link>
+
+        </div>
 
     </div>
   )

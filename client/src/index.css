@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-*{
+/* *{
   padding:0 ;
   box-sizing:border-box;
   margin:0;
@@ -41,8 +41,50 @@ button{
   outline: none;
   background: transparent;
   cursor:pointer;
+} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+.App {
+  max-width: 1230px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Slightly reduced shadow */
+  background-color: #ffffff; /* Added a white background */
+}
+
+a {
+  text-decoration: none;
+  color: #333; /* Darkened link color */
+}
+
+ul, ol {
+  padding: 0; /* Removed default padding */
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 12px; /* Added padding for better click area */
+  border-radius: 4px; /* Rounded button corners */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+button:hover {
+  background-color: #f0f0f0; /* Light background color on hover */
+}
+
+
 
 @import url("./components/headers/header.css");
 
 @import url("./components/mainpages/products/products.css");
+
+@import url("./components/mainpages/utils/DetailProducts/detailProduct.css");

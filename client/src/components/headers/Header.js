@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { MdOutlineMenu } from "react-icons/md";
 import { MdClose } from 'react-icons/md';
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import {Link} from 'react-router-dom';
+import { GlobalState } from '../../GlobalState';
 
 
 
 const Header=()=>{
+
+    const state =useContext(GlobalState)
+    console.log(state)
+
     return(
      <header>
         <div className='menu'>

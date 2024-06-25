@@ -53,8 +53,8 @@ const userCtrl = {
       jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if (err)
           return res.status(400).json({ msg: 'Please Login or Register' });
-        const accesstoken = createAccessToken({ id: user.id });
-        res.json({ user, accesstoken });
+          const accesstoken = createAccessToken({ id: user.id });
+        res.json({user ,accesstoken });//USER THA
       });
 
       // res.json({rf_token})
@@ -98,7 +98,10 @@ const userCtrl = {
 
       if (!user) return res.status(400).json({ msg: 'User Not Found' });
       res.json(user);
-    } catch (err) {}
+    } catch (err) {
+      return res.status(500).json({msg:err.message})
+
+    }
   },
 };
 
